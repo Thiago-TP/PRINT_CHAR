@@ -2,7 +2,7 @@ import sys
 
 
 def make_char_table(source_file_name):
-    with open(source_file_name) as src:
+    with open(source_file_name, encoding="utf8") as src:
         char_blocks = src.readlines()
     with open('CharTable.data', 'w') as char_table:
         sys.stdout = char_table

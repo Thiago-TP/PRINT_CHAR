@@ -1,4 +1,5 @@
 .data
+# https://en.wikipedia.org/wiki/Windows-1252
 
 .text
 MAIN:

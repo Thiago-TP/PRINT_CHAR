@@ -30,11 +30,31 @@ str_symbols:	.string	"!?=+- $%&*()[]{}/|~<>,.;:^'`_@"
 	jal	PrintString	# resultado
 .end_macro
 
+.macro all_chars
+    li  s0, 255
+    li  s1, 190
+	li  a0, 0
+    li  a1, 40
+    li  a2, 40
+    li  a3, 0
+    li  a4, 0x0054c736
+
+	charLoop:
+    	jal myPrintChar
+	    addi    a0, a0, 1
+	    addi    a2, a2, 12
+	    blt a2, s1, charLoop
+	    addi  a1, a1, 12
+	    li  a2, 40
+	    ble a0, s0, charLoop
+.end_macro
+
 MAIN:	
-	test_set(80,  20, 0x0025ff00)	# letra preta, fundo branco, sombra amarelo escuro
-	test_set(80, 100, 0x0054c7f8)	# letra azul neon, fundo invisível, sombra cinza avermelhado 
-	test_set(80, 180, 0x00000038)	# letra verde, fundo preto, sombra preta
-	
+	#test_set(80,  20, 0x0025ff00)	# letra preta, fundo branco, sombra amarelo escuro
+	#test_set(80, 100, 0x0054c7f8)	# letra azul neon, fundo invisível, sombra cinza avermelhado
+	#test_set(80, 180, 0x00000038)	# letra verde, fundo preto, sombra preta
+
+	all_chars
 	fpg:	j fpg			# fim do programa (loop inf)
 
 
