@@ -36,7 +36,7 @@ str_symbols:	.string	"!?=+- $%&*()[]{}/|~<>,.;:^'`_@"
 
 	li  a0, 0
     li  a1, 40
-    li  a2, 0
+    li  a2, 30
     li  a3, 0
     li  a4, 0x0054c736
 
