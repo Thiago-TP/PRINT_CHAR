@@ -4,9 +4,9 @@ import sys
 def make_char_table(source_file_name):
     with open(source_file_name, encoding="utf8") as src:
         char_blocks = src.readlines()
-    with open('CharTable.data', 'w') as char_table:
+    with open('CHAR_TABLE.data', 'w') as char_table:
         sys.stdout = char_table
-        print('CharTable:')
+        print('CHAR_TABLE:')
         while char_blocks:
             comment, bits, block_height = get_bit_grid(char_blocks)
             word1, word2 = make_words(bits)
